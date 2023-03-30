@@ -1,0 +1,59 @@
+Declare an array variable named pizzaArray
+Query database for list of pizzas in order of sales descending.
+Store the result of the query in pizzaArray variable.
+
+Declare an array variable named correctAnswers.
+Add the first three items from pizzaArray to correctAnswers array.
+Declare a new array, containing 4 blank arrays, named answersArray (sub-arrays will contain the answers for each question, respectively.)
+
+Populate the sub-arrays within answersArray
+For each item (sub-array) in “answersArray”
+	Copy the first item in pizzaArray and add to this sub-array of answersArray.
+If this sub-array has less than 3 items, do the following.
+Copy the first item in pizzaArray and add to the final sub-array in answersArray.
+	End If statement.
+Remove the first item in pizzaArray.
+While the sub-array has less than 4 items, do the following.
+	Select a random item from pizzaArray.
+	Add selected item to the current answersArray sub-array.
+	Remove selected item from pizzaArray.
+Once the sub-array has 4 items, stop loop.
+Shuffle the order of the current sub-array.
+End For loop
+
+For each item (sub-array) in the answersArray
+	For each item in the sub-array
+		Add value to respective input / radio element on HTML.
+		Add label to respective input / radio element on HTML.
+	End for loop
+End For loop
+
+Declare a function to run when HTML form is submitted.
+	Declare a variable named userScore, set to the value of 0.
+    	
+	Validate the input from the HTML document.
+	If the data is invalid, do the following.
+		Display a pop-up message to the user.
+		Refresh the web page.
+	End If statement
+
+	For each question, do the following:
+		Declare a variable, named inputValue and store the user’s input.
+
+		If it is not question number 4, do the following.
+			If inputValue matches the corresponding answer stored in correctAnswers, do the following.
+				Add 1 to the value of userScore.
+			End If statement
+		End If statement
+		
+		If it is question number 4, do the following.
+			If inputValue matches ANY of the answers stored in correctAnswers, do the following.
+				Add 1 to the value of userScore.
+			End If statement.
+		End If statement
+	End For loop
+		
+	Display the user score in the form of points – calculation (userScore * 10).
+	Display the number of user’s correct answers – userScore.
+	Display the user score in the form of percentage – calculation (userScore / 4 * 100)
+End the function.

@@ -54,46 +54,24 @@ for (let q = 0; q < 4; q++) {
 
 // Set a function to run when the HTML form is submitted.
 onsubmit = (event) => {
-    
-    // Declare new variables to track the user's score, named "userScore".
+    // Declare a new variable to track the user's score, named "userScore".
     let userScore = 0;
-    
+
     try {
-        // Retrieve the user input for question 1.
-        let answer1 = document.querySelector('input[name="1"]:checked').value;
-
-        // Using an if statement, check if the answer matches the value of the first item in correctAnswers array.
-        // If correct, increment the "userScore" variable by 1.
-        if (answer1 == correctAnswers[0]) {
-            userScore ++;
+        for (let i = 0; i < 4; i++) {
+            let inputValue = document.querySelector('input[name="' + i + '"]:checked').value;
+            if (i < 3) {
+                if (inputValue == correctAnswers[i]) {
+                    userScore++;
+                }
+            }
+            if (i == 3) {
+                if (correctAnswers.includes(inputValue)) {
+                    userScore++;
+                }
+            }
         }
-
-        // Retrieve the user input for question 2.
-        let answer2 = document.querySelector('input[name="2"]:checked').value;
-        
-        // Using an if statement, check if the answer matches the value of the first item in correctAnswers array.
-        // If correct, increment the "userScore" variable by 2.
-        if (answer2 == correctAnswers[1]) {
-            userScore ++;
-        }    
-        
-        // Retrieve the user input for question 3.
-        let answer3 = document.querySelector('input[name="3"]:checked').value;
-        
-        // Using an if statement, check if the answer matches the value of the first item in correctAnswers array.
-        // If correct, increment the "userScore" variable by 3.
-        if (answer3 == correctAnswers[2]) {
-            userScore ++;
-        }
-
-        // Retrieve the user input for question 4.
-        let answer4 = document.querySelector('input[name="4"]:checked').value;
-        
-        // Using an if statement, check if the answer matches the value of the first item in correctAnswers array.
-        // If correct, increment the "userScore" variable by 3.
-        if (correctAnswers.includes(answer4)) {
-            userScore ++;
-        }
+            
     }
     catch {
         alert("All questions must be answered. Quiz will restart.")
