@@ -3,10 +3,10 @@ Javascript - Assessment 1
 
 Note: the purpose of this repo is for Proof of Concept for a pseudocode assignment.
 
-Introduction
+# Introduction
 The client, PizzasOnly, has developed a promotional scheme for all pizza sales during the months of November and December in the current year. They have two requirements, as follows. 
 
-Requirement 1: Customer quiz 
+# Requirement 1: Customer quiz 
 Customers participating in the PizzasOnly promotion will be asked to complete a fun quiz before ordering their pizzas. This quiz should ask the customers the following questions about PizzasOnly menu of 15 pizzas:
 1.	What is the most popular pizza? 
 2.	What is the second most popular pizza? 
